@@ -1,0 +1,85 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "User account and preferences",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "preferenceTheme": { "type": "string" },
+        "defaultDeck": { "type": "string" },
+        "disclaimerAccepted": { "type": "boolean" }
+      },
+      "required": ["createdAt", "disclaimerAccepted"]
+    },
+    "users/{userId}/readings": {
+      "title": "Tarot Reading",
+      "description": "Saved tarot readings with AI interpretations",
+      "type": "object",
+      "properties": {
+        "question": { "type": "string" },
+        "spreadType": { "type": "string" },
+        "cards": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "aiInterpretation": { "type": "string" },
+        "reflectionQuestions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "journalingPrompt": { "type": "string" },
+        "mood": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["question", "spreadType", "cards", "createdAt"]
+    },
+    "users/{userId}/customSpreads": {
+      "title": "Custom Spread Definition",
+      "description": "User created custom tarot spreads",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "description": { "type": "string" },
+        "cardCount": { "type": "number" },
+        "positions": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "recommendedFor": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "cardCount", "positions", "createdAt"]
+    },
+    "users/{userId}/notes": {
+      "title": "Reading Note",
+      "description": "User private notes attached to readings",
+      "type": "object",
+      "properties": {
+        "readingId": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["readingId", "text", "createdAt"]
+    },
+    "users/{userId}/favorites": {
+      "title": "Favorite Reading",
+      "description": "Bookmarked readings",
+      "type": "object",
+      "properties": {
+        "readingId": { "type": "string" },
+        "savedAt": { "type": "string" }
+      },
+      "required": ["readingId", "savedAt"]
+    }
+  }
+}

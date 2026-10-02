@@ -1,0 +1,6 @@
+{
+  "name": "Tarot Depth",
+  "description": "A deep-dive tarot reading web app for reflection, symbolic interpretation, private journaling, and pattern tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
